@@ -1,0 +1,16 @@
+rent_payment_system/
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── utils/
+│   ├── config.py
+│   ├── requirements.txt
+│   └── .env
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+└── README.md 
