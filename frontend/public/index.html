@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poinciana Payment System</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    
+    <!-- Set API URL -->
+    <script>
+      window.API_URL = 'http://192.168.1.23:8001';
+    </script>
+  </head>
+  <body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm" class="form-container">
+            <h2>Login to Your Account</h2>
+            <p class="form-description">Access your account to manage rent payments</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p class="switch-form">Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registerForm" class="form-container" style="display: none;">
+            <h2>Create New Account</h2>
+            <p class="form-description">Register to start managing your rent payments</p>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="reg-firstname">First Name</label>
+                    <input type="text" id="reg-firstname" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-lastname">Last Name</label>
+                    <input type="text" id="reg-lastname" placeholder="Enter your last name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email Address</label>
+                    <input type="email" id="reg-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-apartment">Apartment Number</label>
+                    <input type="text" id="reg-apartment" placeholder="Enter your apartment number" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" placeholder="Create a password" required>
+                    <small class="password-hint">Password must be at least 8 characters long</small>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm-password">Confirm Password</label>
+                    <input type="password" id="reg-confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <p class="switch-form">Already have an account? <a href="#" id="showLogin">Login here</a></p>
+        </div>
+
+        <!-- Payment Form (initially hidden) -->
+        <div id="paymentForm" class="form-container" style="display: none;">
+            <h2>Make Rent Payment</h2>
+            <p class="form-description">Enter your payment details</p>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="amount">Payment Amount ($)</label>
+                    <input type="number" id="amount" placeholder="Enter amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" required>
+                        <option value="">Select payment method</option>
+                        <option value="bank">Bank Transfer</option>
+                        <option value="check">Check</option>
+                    </select>
+                </div>
+                <button type="submit">Submit Payment</button>
+            </form>
+            <button id="logoutBtn" class="secondary-button">Logout</button>
+        </div>
+    </div>
+
+    <script type="module" src="../src/js/utils.js"></script>
+    <script type="module" src="../src/js/auth.js"></script>
+    <script type="module" src="../src/js/payment.js"></script>
+  </body>
+</html>
